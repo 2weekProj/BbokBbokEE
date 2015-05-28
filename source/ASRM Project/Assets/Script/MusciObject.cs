@@ -20,31 +20,31 @@ public class MusciObject : MonoBehaviour {
 		Vector2 touchPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		Ray2D ray = new Ray2D(touchPosition, Vector2.zero);
 		RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
-		Debug.Log(hit.collider.tag);
+		//Debug.Log(hit.collider.tag);
 		
+
+
 		if(hit.collider.tag != null)
 		{
 			//_aa.Stop();
-
 			switch(hit.collider.tag)
 			{
-				case "Music_01_01":	
-				_aa.Stop();
+				case "Music_01_01":
 				_aa.clip = Sample1;
 				_aa.Play();
 				break;
 
 				case "Music_01_02":
-				_aa.Stop();
 				_aa.clip = Sample2;
 				_aa.Play();
 				break;
 			}
 		}
 	}
-	public AudioClip Sample1;
-	public AudioClip Sample2;
 	
+	public AudioClip Sample1 = null;
+	public AudioClip Sample2 = null;
+
 	AudioSource _aa;
 }
 	
