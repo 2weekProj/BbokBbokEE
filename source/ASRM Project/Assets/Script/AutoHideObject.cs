@@ -16,7 +16,7 @@ public class AutoHideObject : MonoBehaviour {
 
 	void OnClick ()
 	{
-		int RandPoint = Random.Range(0,6);
+		int RandPoint = Random.Range(0,8);
 
 		switch(RandPoint)
 		{
@@ -59,6 +59,18 @@ public class AutoHideObject : MonoBehaviour {
 			case 6:
 			Debug.Log("6");
 			m_ButtonSound.clip = RandSound07;
+			m_ButtonSound.Play();
+			break;
+
+			case 7:
+			Debug.Log("7");
+			m_ButtonSound.clip = RandSound08;
+			m_ButtonSound.Play();
+			break;
+		
+			case 8:
+			Debug.Log("8");
+			m_ButtonSound.clip = RandSound09;
 			m_ButtonSound.Play();
 			break;
 		}
@@ -105,6 +117,8 @@ public class AutoHideObject : MonoBehaviour {
 	public AudioClip					RandSound05 = null;
 	public AudioClip					RandSound06 = null;
 	public AudioClip					RandSound07 = null;
+	public AudioClip					RandSound08 = null;
+	public AudioClip					RandSound09 = null;
 	
 	//------------------------------------------
 	private float						m_HideTimer = 0.5f;
